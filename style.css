@@ -1,0 +1,104 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.cabecalho h1 {
+    margin-bottom: 0.5rem;
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* A MÁGICA DO FLEXBOX Hamm Hamm Sim ou não? */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    /* Quebra linha quando não couber */
+    gap: 1.5rem;
+    /* Espaço entre os itens */
+    justify-content: center;
+    /* Centraliza os itens */
+}
+
+/* Cada foto */
+.foto-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Corta a imagem no border-radius */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    /* Flex: grow shrink basis */
+    flex: 1 1 300px;
+    max-width: 400px;
+    /* Não fica gigante em tela grande */
+}
+
+.foto-item:hover {
+    transform: translateY(-5px);
+    /* Sobe um pouco no hover */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.foto-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    /* Corta a imagem sem distorcer */
+    display: block;
+}
+
+.foto-info {
+    padding: 1rem;
+}
+
+.foto-info h3 {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.foto-info p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Rodapé */
+.rodape {
+    background: #34495e;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* RESPONSIVIDADE: Ajustes pra celular */
+    @media (max-width: 600px) {
+    .cabecalho h1 {
+    font-size: 1.5rem;
+    }
+    .foto-item {
+    flex-basis: 100%; /* 1 foto por linha no celular */
+max-width: 100%;
+   }
+}
